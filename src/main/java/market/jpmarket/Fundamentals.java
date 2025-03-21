@@ -47,6 +47,10 @@ public class Fundamentals {
 	}
 	
 	// getter
+	public String getStockCode() {
+		return stockCode;
+	}
+	
 	public String getName() {
 		return name;
 	}

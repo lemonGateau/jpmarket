@@ -27,16 +27,15 @@ import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
 
 public class PageViewer {
-	private static PageController pageController;
+	private static PageController pageController = new PageController();
     private static LocalDate currentDate;
 
     private static final Integer PAGEWIDTH  = 1250;
     private static final Integer PAGEHEIGHT = 800;
 	
     public static void main(String[] args) {
-    	pageController = new PageController();
-    	
         currentDate = LocalDate.now().minusDays(300);
+        currentDate = pageController.skipHolidays(currentDate);
         
         SwingUtilities.invokeLater(() -> {
         	PageViewer.generateMainPage(currentDate);

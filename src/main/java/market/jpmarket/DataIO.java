@@ -11,7 +11,7 @@ import java.util.Map;
 
 public class DataIO {
 	private static final String FOLDERPATH = ".\\csv\\";
-
+	
 	public static LinkedHashMap<LocalDate, Ohlcv> readOhlcvFile(String stockCode) {
         LinkedHashMap<LocalDate, Ohlcv> ohlcvMap = new LinkedHashMap<>();
         String filePath = toFilePath(stockCode, "ohlcv.csv");

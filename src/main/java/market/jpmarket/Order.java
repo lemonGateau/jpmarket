@@ -21,6 +21,15 @@ public class Order {
         this.orderDate = orderDate;
         this.executionDate = null;
     }
+    
+    public Order(String orderId, String stockCode, String side, Integer quantity, Double price, LocalDate orderDate) {
+        this.orderId = orderId;
+        this.stockCode = stockCode;
+        this.side = side;
+        this.quantity = quantity;
+        this.price = price;
+        this.orderDate = orderDate;
+    }
 
     private String generateOrderId(String stockCode, LocalDate orderDate) {
     	String orderId = orderDate.toString() + stockCode + orderCount.toString();

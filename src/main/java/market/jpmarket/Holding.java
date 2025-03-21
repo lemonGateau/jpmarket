@@ -34,13 +34,7 @@ public class Holding {
     public void subtractQuantity(Integer quantity) {
     	this.quantity -= quantity;
     }
-    
-    public void updateAveragePrice(Integer quantity, Double price) {
-    	Double avgPrice = (this.quantity * this.avgPrice + quantity * price) / (this.quantity + quantity);
-
-    	this.avgPrice = (double) Math.round(avgPrice);
-    }
-    
+        
     // setter
     public void setStockCode(String stockCode) {
         this.stockCode = stockCode;
@@ -66,5 +60,10 @@ public class Holding {
     public Double getAveragePrice() {
         return avgPrice;
     }
+    
+    public static Double calcAveragePrice(Integer qty, Double avgPrice, Integer addQty, Double orderPrice) {
+    	Double newPrice = (qty * avgPrice + addQty * orderPrice) / (qty + addQty);
 
+    	return (double) Math.round(newPrice);
+    }
 }

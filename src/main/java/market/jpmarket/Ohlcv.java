@@ -49,6 +49,10 @@ public class Ohlcv {
 	}
 
 	//getter
+	public String getStockCode() {
+		return stockCode;
+	}
+	
 	public Double getOpen() {
 		return open;
 	}
